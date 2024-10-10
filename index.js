@@ -20,10 +20,10 @@ const {
   BeginTransactionCommand,
   CommitTransactionCommand,
   RollbackTransactionCommand
-} = require('@aws-sdk/client-rds-data');
+} = require('@aws-sdk/client-rds-data')
 
 // Require sqlstring to add additional escaping capabilities
-const sqlString = require('sqlstring');
+const sqlString = require('sqlstring')
 
 // Supported value types in the Data API
 const supportedTypes = [
@@ -540,7 +540,6 @@ const query = async function (config, ..._args) {
 const transaction = (config, _args) => {
   const args = typeof _args === 'object' ? [_args] : [{}]
   const queries = [] // keep track of queries
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   let rollback = () => {} // default rollback event
 
   const txConfig = Object.assign(prepareParams(config, args), {
