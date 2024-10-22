@@ -1,12 +1,13 @@
 {
   "name": "@smg-real-estate/data-api-client",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"
   },
   "description": "A lightweight wrapper that simplifies working with the Amazon Aurora Serverless Data API",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "jest",
     "test-ci": "eslint . && jest",
@@ -36,10 +37,16 @@
     "prettier": "^2.6.2",
     "rewire": "^6.0.0"
   },
+  "peerDependencies": {
+    "@aws-sdk/client-rds-data": "3.x"
+  },
   "dependencies": {
-    "sqlstring": "^2.3.2"
+    "add": "^2.0.6",
+    "sqlstring": "^2.3.2",
+    "yarn": "^1.22.22"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ]
 }
